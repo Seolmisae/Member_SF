@@ -20,4 +20,11 @@
     <delete id="delete" parameterType="Long">
         delete from member_sf where id=#{id}
     </delete>
+    <select id="findByMemberEmail" parameterType="String" resultType="member">
+        select * from member_sf where memberEmail=#{loginEmail}
+    </select>
+    <update id="update" parameterType="member">
+        update member_sf set memberAge=#{memberAge}, memberMobile=#{memberMobile}
+        where id=#{id}
+    </update>
 </mapper>
